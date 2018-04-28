@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == '' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)fodypackaging\3.0.3\buildMultiTargeting\FodyPackaging.targets" Condition="Exists('$(NuGetPackageRoot)fodypackaging\3.0.3\buildMultiTargeting\FodyPackaging.targets')" />
+  </ImportGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == 'net452' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)fodypackaging\3.0.3\build\FodyPackaging.targets" Condition="Exists('$(NuGetPackageRoot)fodypackaging\3.0.3\build\FodyPackaging.targets')" />
+    <Import Project="$(NuGetPackageRoot)fody\3.0.3\build\Fody.targets" Condition="Exists('$(NuGetPackageRoot)fody\3.0.3\build\Fody.targets')" />
+  </ImportGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == 'netstandard1.4' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)fodypackaging\3.0.3\build\FodyPackaging.targets" Condition="Exists('$(NuGetPackageRoot)fodypackaging\3.0.3\build\FodyPackaging.targets')" />
+    <Import Project="$(NuGetPackageRoot)fody\3.0.3\build\Fody.targets" Condition="Exists('$(NuGetPackageRoot)fody\3.0.3\build\Fody.targets')" />
+  </ImportGroup>
+</Project>
